@@ -4,6 +4,8 @@ Rectangle {
     id:borderRect
     property int myTopMargin: 0
     property int myBottomMargin: 0
+    width: 100
+    height: 100
     color: "black"
     Rectangle{
         id:innerRect

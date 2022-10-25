@@ -13,7 +13,54 @@ Window {
 
 
 
+    Component {
+        id:com
+        Rectangle{
+            id: rect
+            width: 200
+            height: 100
+            color: "black"
+            Component.onCompleted: {
+                console.log("onComponend", width, height, color)
+            }
+            //Component.onDestruction 控件销毁时会调用这个函数
+            Component.onDestruction: {
+                console.log("onDestruchtion")
+            }
+        }
+    }
+    Loader {
+        id: loader
+        //动态加载组件
+        source: "./MyRectAngle.qml"
+//        sourceComponent: com
+        onStatusChanged: {
+        console.log("status: ", status)
+        }
+    }
+    Button {
+        width: 50
+        height: 50
+        x: 200
+        onClicked: {
+//            loader.item.width = 50
+//            loader.item.height = 50
+//            loader.item.color = "red"
+//            loader.sourceComponent = null
+        }
+    }
 
+
+
+    //    /////////////////////////////////////////////////////////////////
+    //    //Component.onCompleted 控件生成时会调用这个函数，可以用于初始化
+    //    Component.onCompleted: {
+    //        console.log("onComponend", width, height, color)
+    //    }
+    //    //Component.onDestruction 控件销毁时会调用这个函数
+    //    Component.onDestruction: {
+    //        console.log("onDestruchtion")
+    //    }
     /////////////////////////////////////////////////////////////////
     //Rectangle 属性动画-5 Playing Animations in Parallel or in Sequence 并行或顺序播放动画 鼠标点击矩形框出现效果
     //    Rectangle {
