@@ -13,46 +13,387 @@ Window {
 
 
 
-    Component {
-        id:com
-        Rectangle{
-            id: rect
-            width: 200
-            height: 100
-            color: "black"
-            Component.onCompleted: {
-                console.log("onComponend", width, height, color)
-            }
-            //Component.onDestruction 控件销毁时会调用这个函数
-            Component.onDestruction: {
-                console.log("onDestruchtion")
-            }
-        }
-    }
-    Loader {
-        id: loader
-        //动态加载组件
-        source: "./MyRectAngle.qml"
-//        sourceComponent: com
-        onStatusChanged: {
-        console.log("status: ", status)
-        }
-    }
-    Button {
-        width: 50
-        height: 50
-        x: 200
-        onClicked: {
-//            loader.item.width = 50
-//            loader.item.height = 50
-//            loader.item.color = "red"
-//            loader.sourceComponent = null
-        }
-    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////  P7   QML-Button    ///////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2022-10-26  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    ///////////////////////////////////////////////////////////////
+    //Button //按钮相关属性设置
+    //    Button {
+    //        id: btn
+    //        width: 150
+    //        height: 50
+    //        hoverEnabled: false
+    //        autoRepeat: true
+    //        background: Rectangle{
+    //            anchors.fill: btn
+    //            color: {
+    //                if(btn.pressed){
+    //                    return "green"
+    //                }else{
+    //                    return "blue"
+    //                }
+    //            }
+    //            border.width: 10
+    //            border.color: {
+    //                if(btn.pressed){
+    //                    return "red"
+    //                }else{
+    //                    return "black"
+    //                }
+    //            }
+    //        }
+    //    }
+
+
+    ///////////////////////////////////////////////////////////////
+    //Button //按钮相关属性设置
+    //    Button {
+    //        id: btn
+    //        width: 150
+    //        height: 50
+    //        autoRepeat: true
+    //        //此属性以毫秒为单位保存自动重复的初始延迟。默认值为300 ms。 此属性在QtQuick中引入。控制2.4（Qt 5.11）。 请参见autoRepeat和autoRepeatInterval。
+    //        autoRepeatDelay: 3000
+    //        //此属性以毫秒为单位保持自动重复的间隔。默认值为100 ms。 此属性在QtQuick中引入。控制2.4（Qt 5.11）。 另请参见autoRepeat和autoRepeatDelay。
+    //        autoRepeatInterval: 1000
+    //        checkable: true
+    //        //可以判断是否按下了鼠标
+    //        onDownChanged: {
+    //            console.log("down:",down,"pressed", pressed)
+    //        }
+    ////        icon.source: "file:///" + "C:/Users/LS/Documents/Work/Quick-Study/src/xukun.jpeg"
+    ////        icon.color: "red"
+
+    ////        indicator: Image {
+    ////            id: ind
+    ////            source: "file:///" + "C:/Users/LS/Documents/Work/Quick-Study/src/xukun.jpeg"
+    ////        }
+
+    //        text: "pressed"
+    //    }
 
 
 
-    //    /////////////////////////////////////////////////////////////////
+
+
+    ///////////////////////////////////////////////////////////////
+    //Button //按钮相关属性设置
+    //    Button {
+    //        id: btn
+    //        width: 50
+    //        height: 50
+    //        //此属性控制按钮在按住时会重复pressed（）、released（）和clicked（）信号。
+    //        //如果此属性设置为true，则不会发出pressAndHold（）信号。
+    //        //默认值为false。
+    //        //初始延迟和重复间隔由autoRepeatDelay和autoRepeat interval以毫秒为单位定义。
+    //        autoRepeat: true
+    //        //此属性以毫秒为单位保存自动重复的初始延迟。默认值为300 ms。 此属性在QtQuick中引入。控制2.4（Qt 5.11）。 请参见autoRepeat和autoRepeatInterval。
+    //        autoRepeatDelay: 3000
+    //        //此属性以毫秒为单位保持自动重复的间隔。默认值为100 ms。 此属性在QtQuick中引入。控制2.4（Qt 5.11）。 另请参见autoRepeat和autoRepeatDelay。
+    //        autoRepeatInterval: 1000
+    //        onClicked: {
+    //            console.log("onClicked")
+    //        }
+    //        onPressed: {
+    //            console.log("onPressed")
+    //        }
+    //        onReleased: {
+    //            console.log("onReleased")
+    //        }
+    //    }
+
+    ///////////////////////////////////////////////////////////////
+    //Button //按钮相关属性设置
+    //    Button {
+    //        id: btn
+    //        width: 50
+    //        height: 50
+    //        x: 50
+    //        //按钮可以突出显示，以吸引用户的注意力。它对键盘交互没有影响。 默认值为false
+    //        //highlighted: true
+    //        //平面按钮通常不会绘制背景，除非按下或选中它。 默认值为false
+    //        //flat: true
+    //        //此属性保存按钮是否可选中。 当用户单击可选中按钮或在按钮处于活动焦点时按下空格键时，可选中按钮在选中（打开）和未选中（关闭）之间切换。 默认值为false。
+    //        checkable: true
+    //        //此属性保存是否启用自动独占性。 如果启用了自动排他性，则属于同一父项的可选中按钮的行为就像它们是同一ButtonGroup的一部分一样。任何时候只能选中一个按钮；选中另一个按钮会自动取消选中先前选中的按钮。
+    //        autoExclusive: true
+    //        onCheckableChanged: {
+    //          console.log("changed",checkable)
+    //        }
+    //        onClicked: {
+    //            //6.2版本后checked属性的修改不再影响checkable属性
+    //            //btn.checked = !btn.checked
+    //            btn.checkable = !btn.checkable
+    //            //console.log("btn.checked",btn.checked)
+    //        }
+    //    }
+    //    Button {
+    //        id: btn1
+    //        width: 50
+    //        height: 50
+    //        x: 120
+    //        //按钮可以突出显示，以吸引用户的注意力。它对键盘交互没有影响。 默认值为false
+    //        //highlighted: true
+    //        //平面按钮通常不会绘制背景，除非按下或选中它。 默认值为false
+    //        //flat: true
+    //        //此属性保存按钮是否可选中。 当用户单击可选中按钮或在按钮处于活动焦点时按下空格键时，可选中按钮在选中（打开）和未选中（关闭）之间切换。 默认值为false。
+    //        checkable: true
+    //        //此属性保存是否启用自动独占性。 如果启用了自动排他性，则属于同一父项的可选中按钮的行为就像它们是同一ButtonGroup的一部分一样。任何时候只能选中一个按钮；选中另一个按钮会自动取消选中先前选中的按钮。
+    //        autoExclusive: true
+    //    }
+    //    Button {
+    //        id: btn2
+    //        width: 50
+    //        height: 50
+    //        x: 170
+    //        //按钮可以突出显示，以吸引用户的注意力。它对键盘交互没有影响。 默认值为false
+    //        //highlighted: true
+    //        //平面按钮通常不会绘制背景，除非按下或选中它。 默认值为false
+    //        //flat: true
+    //        //此属性保存按钮是否可选中。 当用户单击可选中按钮或在按钮处于活动焦点时按下空格键时，可选中按钮在选中（打开）和未选中（关闭）之间切换。 默认值为false。
+    //        checkable: true
+    //        //此属性保存是否启用自动独占性。 如果启用了自动排他性，则属于同一父项的可选中按钮的行为就像它们是同一ButtonGroup的一部分一样。任何时候只能选中一个按钮；选中另一个按钮会自动取消选中先前选中的按钮。
+    //        autoExclusive: true
+    //    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////// P6   QML-MouseArea ///////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2022-10-26  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+    ///////////////////////////////////////////////////////////////
+    //MouseArea //鼠标区域相关操作 子控件继承父控件属性
+    //    Rectangle {
+    //         color: "yellow"
+    //         width: 100; height: 100
+
+    //         MouseArea {
+    //             anchors.fill: parent
+    //             onClicked: console.log("clicked yellow")
+    //         }
+
+    //         Rectangle {
+    //             color: "blue"
+    //             width: 50; height: 50
+
+    //             MouseArea {
+    //                 anchors.fill: parent
+    //                 //子控件向父控件传递鼠标点击时间选项， ture 传递  false 不传递
+    //                 propagateComposedEvents: true
+    //                 onClicked: (mouse)=> {
+    //                     console.log("clicked blue")
+    //                     //子控件向父控件传递鼠标点击时间选项， ture 不传递  false 传递
+    //                     mouse.accepted = false
+    //                 }
+    //                 onDoubleClicked: {
+    //                     console.log("onDoubleClicked")
+    //                 }
+    //             }
+    //         }
+    //     }
+    ///////////////////////////////////////////////////////////////
+    //MouseArea //鼠标区域相关操作 子控件继承父控件属性
+    //    Rectangle {
+    //        width: 480
+    //        height: 320
+    //        Rectangle {
+    //            x: 30; y: 30
+    //            width: 300; height: 240
+    //            color: "lightsteelblue"
+
+    //            MouseArea {
+    //                anchors.fill: parent
+    //                drag.target: parent;
+    //                drag.axis: "XAxis"
+    //                drag.minimumX: 30
+    //                drag.maximumX: 150
+    //                //支持子控件和父控件一样拖动
+    //                drag.filterChildren: true
+
+    //                Rectangle {
+    //                    color: "yellow"
+    //                    x: 50; y : 50
+    //                    width: 100; height: 100
+    //                    MouseArea {
+    //                        anchors.fill: parent
+    //                        onClicked: console.log("Clicked")
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
+    ///////////////////////////////////////////////////////////////
+    //MouseArea //鼠标区域相关操作
+    //    Rectangle {
+    //        id: container
+    //        width: 600; height: 200
+
+    //        Rectangle {
+    //            id: rect
+    //            width: 50; height: 50
+    //            color: "red"
+    //            //透明度渐变
+    //            opacity: (600.0 - rect.x) / 600
+    //            //自由移动矩形框位置
+    //            MouseArea {
+    //                anchors.fill: parent
+    //                drag.target: rect
+    //                drag.axis: Drag.XAxis | Drag.YAxis
+    //                drag.minimumX: 0
+    //                drag.maximumX: container.width - rect.width
+    //            }
+    //        }
+    //    }
+    ///////////////////////////////////////////////////////////////
+    //MouseArea //鼠标区域相关操作
+    //        MouseArea {
+    //            id:mouseArea
+    //            width: 200
+    //            height: 200
+    //            //添加鼠标左键和右键按下支持
+    //            acceptedButtons: Qt.LeftButton | Qt.RightButton
+    //            ////设置为false，控件停止响应任何操作
+    //            enabled: true
+    //            /////hoverEnabled: true 这个开启后鼠标移动进去后会触发一系列槽函数
+    //            hoverEnabled: false
+    //            ////鼠标长按时间设置会触发onPressAndHold
+    //            pressAndHoldInterval: 2000
+    //            //更改鼠标移入进去后光标的样式
+    //            cursorShape: Qt.CrossCursor
+    //            Rectangle {
+    //                anchors.fill: parent
+    //                color: "black"
+    //            }
+    //            //鼠标长按触发信号
+    //            onPressAndHold: {
+    //                console.log("onPressAndHold")
+    //            }
+
+    //            /////hoverEnabled: true 这个开启后鼠标移动进去后会触发这个槽函数 false 鼠标点击会触发
+    //            onMouseXChanged: {
+    //                console.log("x:", mouseX)
+    //            }
+    //            onMouseYChanged: {
+    //                console.log("y:", mouseY)
+    //            }
+    //            /////hoverEnabled: true 这个开启后鼠标移动进去后会触发这个槽函数
+    //            onHoveredChanged: {
+    //                console.log("onHoveredChanged")
+    //            }
+
+    //            onClicked: {
+    //                console.log("clicked")
+    //            }
+    //            ////鼠标按下
+    //            onContainsMouseChanged: {
+    //                    console.log("onCantainsMouseChanged",containsMouse)
+    //            }
+    //            ////鼠标松开
+    //            onContainsPressChanged: {
+    //                    console.log("onCantainsMouseChanged",containsPress)
+    //            }
+    //            //判断鼠标某个案件是否真的按下
+    //            onPressed: {
+    //                var ret = pressedButtons & Qt.LeftButton
+    //                var ret1 = pressedButtons & Qt.RightButton
+    //                console.log(ret ? "left" : ret1 ? "Right" : "other")
+    //                console.log("pressed")
+    //            }
+    //            onReleased: {
+    //                console.log("released")
+    //            }
+    //}
+
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////P5   QML-Component与Loader  //////////////////////////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2022-10-26  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+    ///////////////////////////////////////////////////////////////
+    //Component 封装通过Loader动态加载 三个封装3选1
+    //    Component {
+    //        id: com
+    //        Image {
+    //            id: img
+    //            source: "file:///" + "C:/Users/LS/Documents/Work/Quick-Study/src/xukun.jpeg"  //绝对路径。windows下 绝对路径前面要加 "file:///" 三个下划线，否则加载不出来
+    //            sourceSize.width: 200
+    //            sourceSize.height: 200
+    //        }
+    //    }
+    //    Component {
+    //        id: com
+    //        AnimatedImage {
+    //            id: img
+    //            source: "file:///" + "C:/Users/LS/Documents/Work/Quick-Study/src/xukun.gif"   //绝对路径。windows下 绝对路径前面要加 "file:///" 三个下划线，否则加载不出来
+    //            speed: 5
+    //        }
+    //    }
+    //    Component {
+    //        id:com
+    //        Rectangle{
+    //            id: rect
+    //            width: 200
+    //            height: 100
+    //            color: "black"
+    //            Component.onCompleted: {
+    //                console.log("onComponend", width, height, color)
+    //            }
+    //            //Component.onDestruction 控件销毁时会调用这个函数
+    //            Component.onDestruction: {
+    //                console.log("onDestruchtion")
+    //            }
+    //        }
+    //    }
+    //    //使用Loader 动态加载 Component组件
+    //    Loader {
+    //        id: loader
+    //        //动态加载组件
+    //        //        source: "./MyRectAngle.qml"
+    //        asynchronous: true
+    //        sourceComponent: com
+    //        onStatusChanged: {
+    //            console.log("status: ", status)
+    //        }
+    //    }
+    //    Button {
+    //        width: 50
+    //        height: 50
+    //        x: 200
+    //        onClicked: {
+    //            loader.item.paused = !loader.item.paused
+    //            //            loader.item.width = 50
+    //            //            loader.item.height = 50
+    //            //            loader.item.color = "red"
+    //            //            loader.sourceComponent = null
+    //        }
+    //    }
+    ///////////////////////////////////////////////////////////////
+
+
+    /////////////////////////////////////////////////////////////////
     //    //Component.onCompleted 控件生成时会调用这个函数，可以用于初始化
     //    Component.onCompleted: {
     //        console.log("onComponend", width, height, color)
@@ -61,6 +402,20 @@ Window {
     //    Component.onDestruction: {
     //        console.log("onDestruchtion")
     //    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////P4   QML-states与transitions-动画效果制作     ///////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2022-10-26  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
     /////////////////////////////////////////////////////////////////
     //Rectangle 属性动画-5 Playing Animations in Parallel or in Sequence 并行或顺序播放动画 鼠标点击矩形框出现效果
     //    Rectangle {
@@ -309,6 +664,14 @@ Window {
     //    }
 
 
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////P3   实现自定义边框RectAngle     ////////////////////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2022-10-26  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
     /////////////////////////////////////////////////////////////////
     //Rectangle 自定义控件
     //    MyRectAngle{
@@ -319,6 +682,14 @@ Window {
     //        myTopMargin: 5
     //        myBottomMargin: 5
     //    }
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////P2   QML-item与Rectangle     //////////////////////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2022-10-26  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     /////////////////////////////////////////////////////////////////
     //Rectangle 属性设置
@@ -451,6 +822,18 @@ Window {
     //    onMy_NameChanged: {
 
     //    }
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////P1   QML-Window介绍      ///////////////////////////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2022-10-26  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
     /////////////////////////////////////////////////////////////////
     //    Button{
     //        id:btn1

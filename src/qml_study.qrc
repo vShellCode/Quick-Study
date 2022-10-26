@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>xukun.jpeg</file>
+        <file>xukun.gif</file>
+    </qresource>
+</RCC>

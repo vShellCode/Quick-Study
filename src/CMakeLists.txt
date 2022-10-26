@@ -8,7 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 6.2 COMPONENTS Quick REQUIRED)
 
 qt_add_executable(appQML_Study
-    main.cpp
+    qml_study.qrc
+    main.cpp MyRectAngle.qml
 )
 
 qt_add_qml_module(appQML_Study
@@ -16,6 +17,7 @@ qt_add_qml_module(appQML_Study
     VERSION 1.0
     QML_FILES main.qml MyRectAngle.qml
 )
+
 
 set_target_properties(appQML_Study PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
