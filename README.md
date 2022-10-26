@@ -16,3 +16,4 @@ P4	QML-states与transitions-动画效果制作
 P5 	QML-Component与Loader  
 P6	QML-MouseArea  
 P7	QML-Button  
+P8	QML-property  
