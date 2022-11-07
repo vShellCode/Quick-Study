@@ -11,121 +11,293 @@ Window {
     maximumHeight: 600
     maximumWidth: 600
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////  P10   QML-Button扩展  /////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2022-11-07  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//    Button {
+//        id: control
+//        width: 200
+//        height: 100
+//        text: qsTr("Button")
+//        padding: 0
+//        highlighted: true
+//        flat: true
+//        //调整颜色
+//        background: Rectangle{
+//            anchors.fill:parent
+//            color: "black"
+
+//        }
+//        //调整具体内容
+//        contentItem: Rectangle {
+//            color: "transparent"
+//            Text {
+//                id: txt
+//                text: control.text
+//            }
+//            Image {
+//                id: img
+//                source: "file:///" + "C:/Users/LS/Documents/Work/Quick-Study/src/xukun.jpeg"
+//                width:50
+//                height: 50
+//                //anchors.fill: control.parent
+//            }
+//        }
+//    }
+
+
+    //    Button {
+    //        id: control
+    //        width: 200
+    //        height: 100
+    //        text: qsTr("Button")
+    //        contentItem: Text {
+    //            text: control.text
+    //            //字体
+    //            font.pixelSize: 18
+    //            //粗体
+    //            font.bold: true
+    //            //斜体
+    //            font.italic: true
+    //        }
+    //    }
+
+
+    //    Button{
+    //        id: btn
+    //        width: 150
+    //        height: 100
+    //        //        //平面按钮通常不会绘制背景，除非按下或选中它。 默认值为false
+    //        flat: true
+    //        background: Rectangle{
+    //            anchors.fill: parent
+    //            color: btn.checked | btn.down ? "blue" : "black"
+    //        }
+    //    }
+
+
+
+    //组合按钮，类似前进后退播放器菜单那种
+    //    ToolBar {
+    //        Row {
+    //            anchors.fill: parent
+    //            ToolButton {
+    //                text: qsTr("‹")
+    //                onClicked: stack.pop()
+    //            }
+    //            Label {
+    //                text: "Title"
+    //                elide: Label.ElideRight
+    //                horizontalAlignment: Qt.AlignHCenter
+    //                verticalAlignment: Qt.AlignVCenter
+    //                //Layout.fillWidth: true
+    //            }
+    //            ToolButton {
+    //                text: qsTr("⋮")
+    //                onClicked: menu.open()
+    //            }
+    //        }
+    //    }
+
+
+    //圆形按钮
+    //    RoundButton {
+    //        text: "\u2713" // Unicode Character 'CHECK MARK'
+    //        onClicked: textArea.readOnly = true
+    //        radius: 10
+    //    }
+
+    //正常组合按钮
+    //    TabBar {
+    //        TabButton {
+    //            text: qsTr("Home")
+    //        }
+    //        TabButton {
+    //            text: qsTr("Discover")
+    //        }
+    //        TabButton {
+    //            text: qsTr("Activity")
+    //        }
+    //    }
+
+
+
+
+    //开关按钮
+    //    ButtonGroup{
+    //        id: bungrp
+    //        exclusive: true
+    //        buttons: col.children
+    //    }
+
+    //    Column {
+    //        id: col
+    //        Switch {
+    //            text: qsTr("Wi-Fi")
+    //            LayoutMirroring.enabled: true
+    //            //实际移动的距离
+    //            onPositionChanged: {
+    //                console.log("pos: ", position)
+    //            }
+    //            //从左到右移动的距离，最左侧为0
+    //            onVisualPositionChanged: {
+    //                console.log("visualPosition: ", visualPosition)
+    //            }
+    //        }
+    //        Switch {
+
+    //            text: qsTr("Bluetooth")
+    //        }
+    //    }
+
+
+
+    ////单选按钮
+    //    Column  {
+    //        RadioButton {
+    //            checked: true
+    //            text: qsTr("First")
+    //        }
+    //        RadioButton {
+    //            text: qsTr("Second")
+    //        }
+    //        RadioButton {
+    //            text: qsTr("Third")
+    //        }
+    //    }
+
+
+
+
+    //类似进度条的功能
+    //    DelayButton {
+    //        width: 150
+    //        height: 50
+    //        //设置加载时间ms
+    //        delay: 3000
+    //        onProgressChanged: {
+    //            console.log(progress)
+    //        }
+    //    }
+
 
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////  P9   QML-CheckBox  ///////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////vShellCode: 2022-11-27  ///////////////////////////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2022-11-07  ///////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-//    //CheckBox切换模式
-//    CheckBox {
-//        tristate: true
-//        nextCheckState: function() {
-//            //注意这个是三个等于号
-//            if (checkState === Qt.Unchecked)
-//                return Qt.Checked
-//            //注意这个是三个等于号
-//            else if(checkState === Qt.Checked)
-//                return Qt.PartiallyChecked
-//            else
-//                return Qt.Unchecked
-//        }
-//    }
+    //    //CheckBox切换模式
+    //    CheckBox {
+    //        tristate: true
+    //        nextCheckState: function() {
+    //            //注意这个是三个等于号
+    //            if (checkState === Qt.Unchecked)
+    //                return Qt.Checked
+    //            //注意这个是三个等于号
+    //            else if(checkState === Qt.Checked)
+    //                return Qt.PartiallyChecked
+    //            else
+    //                return Qt.Unchecked
+    //        }
+    //    }
 
 
 
-//类似treewidget功能
-//    Column {
-//        ButtonGroup {
-//            id: childGroup
-//            exclusive: false
-//            checkState: parentBox.checkState
-//        }
+    //类似treewidget功能
+    //    Column {
+    //        ButtonGroup {
+    //            id: childGroup
+    //            exclusive: false
+    //            checkState: parentBox.checkState
+    //        }
 
-//        CheckBox {
-//            id: parentBox
-//            text: qsTr("Parent")
-//            checkState: childGroup.checkState
-//        }
+    //        CheckBox {
+    //            id: parentBox
+    //            text: qsTr("Parent")
+    //            checkState: childGroup.checkState
+    //        }
 
-//        CheckBox {
-//            checked: true
-//            text: qsTr("Child 1")
-//            leftPadding: indicator.width
-//            ButtonGroup.group: childGroup
-//        }
+    //        CheckBox {
+    //            checked: true
+    //            text: qsTr("Child 1")
+    //            leftPadding: indicator.width
+    //            ButtonGroup.group: childGroup
+    //        }
 
-//        CheckBox {
-//            text: qsTr("Child 2")
-//            leftPadding: indicator.width
-//            ButtonGroup.group: childGroup
-//        }
-//    }
-
-
-
-//Button //设置单选功能
-//    ButtonGroup {
-//            id: childGroup
-//            exclusive: true
-//            buttons: col.children
-//        }
-
-////    垂直布局
-//    Column {
-//        id: col
-//        CheckBox {
-//            //复选框是否为三态复选框
-////            tristate: true
-//            checked: true
-////            autoExclusive: true
-//            text: qsTr("First")
-//            onCheckStateChanged: {
-//                console.log("state",checkState)
-//            }
-//            //单选方法二
-//            ButtonGroup.group: childGroup
-//        }
-//        CheckBox {
-//            checked: true
-////            autoExclusive: true
-//            text: qsTr("Second")
-//            //单选方法二
-//            ButtonGroup.group: childGroup
-//        }
-//        CheckBox {
-////            autoExclusive: true
-//            checked: true
-//            text: qsTr("Third")
-//            //单选方法二
-//            ButtonGroup.group: childGroup
-//        }
-//    }
+    //        CheckBox {
+    //            text: qsTr("Child 2")
+    //            leftPadding: indicator.width
+    //            ButtonGroup.group: childGroup
+    //        }
+    //    }
 
 
-//    Button设置单选
-//    垂直布局
-//    Column {
-//        Button {
-//            //复选框是否为三态复选框
-//            //           tristate: true
-//            autoExclusive: true
-//            checkable: true
-//            text: qsTr("First")
-//        }
-//        Button {
-//            checkable: true
-//            autoExclusive: true
-//            text: qsTr("Second")
-//        }
-//        Button {
-//            autoExclusive: true
-//            checkable: true
-//            text: qsTr("Third")
-//        }
-//    }
+
+    //Button //设置单选功能
+    //    ButtonGroup {
+    //            id: childGroup
+    //            exclusive: true
+    //            buttons: col.children
+    //        }
+
+    ////    垂直布局
+    //    Column {
+    //        id: col
+    //        CheckBox {
+    //            //复选框是否为三态复选框
+    ////            tristate: true
+    //            checked: true
+    ////            autoExclusive: true
+    //            text: qsTr("First")
+    //            onCheckStateChanged: {
+    //                console.log("state",checkState)
+    //            }
+    //            //单选方法二
+    //            ButtonGroup.group: childGroup
+    //        }
+    //        CheckBox {
+    //            checked: true
+    ////            autoExclusive: true
+    //            text: qsTr("Second")
+    //            //单选方法二
+    //            ButtonGroup.group: childGroup
+    //        }
+    //        CheckBox {
+    ////            autoExclusive: true
+    //            checked: true
+    //            text: qsTr("Third")
+    //            //单选方法二
+    //            ButtonGroup.group: childGroup
+    //        }
+    //    }
+
+
+    //    Button设置单选
+    //    垂直布局
+    //    Column {
+    //        Button {
+    //            //复选框是否为三态复选框
+    //            //           tristate: true
+    //            autoExclusive: true
+    //            checkable: true
+    //            text: qsTr("First")
+    //        }
+    //        Button {
+    //            checkable: true
+    //            autoExclusive: true
+    //            text: qsTr("Second")
+    //        }
+    //        Button {
+    //            autoExclusive: true
+    //            checkable: true
+    //            text: qsTr("Third")
+    //        }
+    //    }
 
 
 
