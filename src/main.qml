@@ -10,32 +10,154 @@ Window {
     minimumWidth: 400
     maximumHeight: 600
     maximumWidth: 600
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////  P9   QML-CheckBox  ///////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2022-11-27  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//    //CheckBox切换模式
+//    CheckBox {
+//        tristate: true
+//        nextCheckState: function() {
+//            //注意这个是三个等于号
+//            if (checkState === Qt.Unchecked)
+//                return Qt.Checked
+//            //注意这个是三个等于号
+//            else if(checkState === Qt.Checked)
+//                return Qt.PartiallyChecked
+//            else
+//                return Qt.Unchecked
+//        }
+//    }
+
+
+
+//类似treewidget功能
+//    Column {
+//        ButtonGroup {
+//            id: childGroup
+//            exclusive: false
+//            checkState: parentBox.checkState
+//        }
+
+//        CheckBox {
+//            id: parentBox
+//            text: qsTr("Parent")
+//            checkState: childGroup.checkState
+//        }
+
+//        CheckBox {
+//            checked: true
+//            text: qsTr("Child 1")
+//            leftPadding: indicator.width
+//            ButtonGroup.group: childGroup
+//        }
+
+//        CheckBox {
+//            text: qsTr("Child 2")
+//            leftPadding: indicator.width
+//            ButtonGroup.group: childGroup
+//        }
+//    }
+
+
+
+//Button //设置单选功能
+//    ButtonGroup {
+//            id: childGroup
+//            exclusive: true
+//            buttons: col.children
+//        }
+
+////    垂直布局
+//    Column {
+//        id: col
+//        CheckBox {
+//            //复选框是否为三态复选框
+////            tristate: true
+//            checked: true
+////            autoExclusive: true
+//            text: qsTr("First")
+//            onCheckStateChanged: {
+//                console.log("state",checkState)
+//            }
+//            //单选方法二
+//            ButtonGroup.group: childGroup
+//        }
+//        CheckBox {
+//            checked: true
+////            autoExclusive: true
+//            text: qsTr("Second")
+//            //单选方法二
+//            ButtonGroup.group: childGroup
+//        }
+//        CheckBox {
+////            autoExclusive: true
+//            checked: true
+//            text: qsTr("Third")
+//            //单选方法二
+//            ButtonGroup.group: childGroup
+//        }
+//    }
+
+
+//    Button设置单选
+//    垂直布局
+//    Column {
+//        Button {
+//            //复选框是否为三态复选框
+//            //           tristate: true
+//            autoExclusive: true
+//            checkable: true
+//            text: qsTr("First")
+//        }
+//        Button {
+//            checkable: true
+//            autoExclusive: true
+//            text: qsTr("Second")
+//        }
+//        Button {
+//            autoExclusive: true
+//            checkable: true
+//            text: qsTr("Third")
+//        }
+//    }
+
+
+
+
+
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////  P8   QML-property  ///////////////////////////////////////////////////////////////////////////
     ///////////////////////////////vShellCode: 2022-10-26  ///////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    Component {
-        id: com
-        Button {
-            width:50
-            height:50
+    //    Component {
+    //        id: com
+    //        Button {
+    //            width:50
+    //            height:50
 
-        }
-    }
+    //        }
+    //    }
 
 
-    MyRectAngle{
-        //对应初始化值
-        myComponent: com
-        myTopMargin: 10
-        Component.onCompleted: {
-            console.log(rectWidth)
-            //newInnerRect.color = "yellow"
-            newInnerRectcolor= "red"
-        }
-    }
+    //    MyRectAngle{
+    //        //对应初始化值
+    //        myComponent: com
+    //        myTopMargin: 10
+    //        Component.onCompleted: {
+    //            console.log(rectWidth)
+    //            //newInnerRect.color = "yellow"
+    //            newInnerRectcolor= "red"
+    //        }
+    //    }
 
 
 

@@ -17,3 +17,4 @@ P5 	QML-Component与Loader
 P6	QML-MouseArea  
 P7	QML-Button  
 P8	QML-property  
+P9  QML-CheckBox  
