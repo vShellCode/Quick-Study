@@ -12,41 +12,212 @@ Window {
     maximumWidth: 600
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////  P11   QML-Text的使用  /////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2022-11-08  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //    Rectangle {
+
+    //        id: rect
+    //        width: 300
+    //        height: 200
+    //        border.color: "black"
+    //        Text {
+    //            MouseArea {
+    //                anchors.fill: parent
+    //                hoverEnabled: true
+    //                cursorShape: Qt.PointingHandCursor
+    //                onClicked:    {
+
+    //                }
+    //            }
+    //            textFormat: Text.RichText
+    //            text: "See the <a href=\"http://qt-project.org\">Qt Project website</a>."
+    //            onLinkActivated: console.log(link + " link activated")
+    //            onLinkHovered: console.log("hover", link)
+    //            onLinkColorChanged: console.log("hover link changed: ", hoveredLink)
+    //        }
+
+    //    }
+
+
+
+    //    Rectangle {
+
+    //        id: rect
+    //        width: 100
+    //        height: 200
+    //        border.color: "black"
+    //        Text {
+    //            id: txt
+    //            text: qsTr("text text text text text text text")
+    //            anchors.fill: parent
+    //            elide: Text.ElideRight
+    //            wrapMode: Text.WordWrap //自动换行
+    //        }
+    //    }
+
+
+
+    //    Column {
+    //        Text {
+    //            font.pointSize: 24
+    //            text: "<b>Hello</b> <i>World!</i>"
+    //        }
+    //        Text {
+    //            font.pointSize: 24
+    //            textFormat: Text.RichText //富文本
+    //            text: "<b>Hello</b> <i>World!</i>"
+    //        }
+    //        Text {
+    //            font.pointSize: 24
+    //            textFormat: Text.PlainText //纯文本
+    //            text: "<b>Hello</b> <i>World!</i>"
+    //        }
+    //        Text {
+    //            font.pointSize: 24
+    //            textFormat: Text.MarkdownText
+    //            text: "**Hello** *World!*"
+    //        }
+    //    }
+
+    //    Row {
+    //         Text { font.pointSize: 24; text: "Normal" }
+    //         Text { font.pointSize: 24; text: "Raised"; style: Text.Raised; styleColor: "#AAAAAA" }
+    //         Text { font.pointSize: 24; text: "Outline";style: Text.Outline; styleColor: "red" }
+    //         Text { font.pointSize: 24; text: "Sunken"; style: Text.Sunken; styleColor: "#AAAAAA" }
+    //     }
+
+    //    Text {
+    //        id: txt
+    //        text: qsTr("text \n text \n text")
+    //        font.bold: true //加粗
+    //        font.family: "Courier New"//字体
+    //        font.italic: true //斜体
+    //        font.letterSpacing: 10 //单个字母直接的距离
+    //        font.pixelSize: 36  //字体的像素大小
+    //        font.pointSize: 36   //字体的榜大小
+    //        font.underline: true    //下划线
+    //        lineHeight: 2
+    //        Component.onCompleted: {
+    //            console.log(lineCount)//行数
+    //            console.log(lineHeight)//行数
+    //        }
+    //    }
+
+    //Rectangle {
+    //    width: 50
+    //    height: 50
+    //    anchors.centerIn: parent
+    //    border.color: "black"
+    //    Text {
+    //        id: txt
+    //        //主要用于过长文本添加省略号
+    ////        elide: Text.ElideRight
+    ////        elide: Text.ElideLeft
+    //        elide: Text.ElideMiddle
+    //        anchors.fill: parent
+    //        text: qsTr("text222222222222222222222222222222222222222222222333333333")
+    //    }
+    //}
+
+    //    Text {
+    //        id: txt
+    //        text: qsTr("text 123  3123 \n test 123")
+    //        Component.onCompleted:{
+    //            console.log(contentWidth)
+    //            console.log(contentHeight)
+    //        }
+    //    }
+
+
+
+
+
+    //    Text {
+    //          color: "#00FF00"
+    //          text: "green text"
+    //      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////  P10   QML-Button扩展  /////////////////////////////////////////////////////////////////////////
     ///////////////////////////////vShellCode: 2022-11-07  ///////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-//    Button {
-//        id: control
-//        width: 200
-//        height: 100
-//        text: qsTr("Button")
-//        padding: 0
-//        highlighted: true
-//        flat: true
-//        //调整颜色
-//        background: Rectangle{
-//            anchors.fill:parent
-//            color: "black"
+    //    Button {
+    //        id: control
+    //        width: 200
+    //        height: 100
+    //        text: qsTr("Button")
+    //        padding: 0
+    //        highlighted: true
+    //        flat: true
+    //        //调整颜色
+    //        background: Rectangle{
+    //            anchors.fill:parent
+    //            color: "black"
 
-//        }
-//        //调整具体内容
-//        contentItem: Rectangle {
-//            color: "transparent"
-//            Text {
-//                id: txt
-//                text: control.text
-//            }
-//            Image {
-//                id: img
-//                source: "file:///" + "C:/Users/LS/Documents/Work/Quick-Study/src/xukun.jpeg"
-//                width:50
-//                height: 50
-//                //anchors.fill: control.parent
-//            }
-//        }
-//    }
+    //        }
+    //        //调整具体内容
+    //        contentItem: Rectangle {
+    //            color: "transparent"
+    //            Text {
+    //                id: txt
+    //                text: control.text
+    //            }
+    //            Image {
+    //                id: img
+    //                source: "file:///" + "C:/Users/LS/Documents/Work/Quick-Study/src/xukun.jpeg"
+    //                width:50
+    //                height: 50
+    //                //anchors.fill: control.parent
+    //            }
+    //        }
+    //    }
 
 
     //    Button {
