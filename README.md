@@ -7,7 +7,7 @@
 代码对应b站教程地址：
 https://www.bilibili.com/video/BV1dS4y1u7vN?p=5&spm_id_from=pageDriver&vd_source=80dedbd67a8024eab599725af36b55b6
   
-  
+////////////////////////////////////////////////////////////////////////////////////////////////  
 已更新代码：  
 P1	QML-Window  
 P2	QML-item与Rectangle  
@@ -21,3 +21,4 @@ P9	QML-CheckBox
 P10	QML-Button扩展  
 P11	QML-Text的使用  
 P12	QML-Popup的绘制与Overlay的使用  
+////////////////////////////////////////////////////////////////////////////////////////////////  
