@@ -19,4 +19,5 @@ P7	QML-Button
 P8	QML-property  
 P9	QML-CheckBox  
 P10	QML-Button扩展  
-P11	QML-Text的使用  
+P11	QML-Text的使用 
+P12	QML-Popup的绘制与Overlay的使用   

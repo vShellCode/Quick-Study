@@ -10,6 +10,134 @@ Window {
     minimumWidth: 400
     maximumHeight: 600
     maximumWidth: 600
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////  P12   QML-Popup的绘制与Overlay的使用  //////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2022-12-17  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        Button {
+            width: 50
+            height: 50
+            onClicked: {
+//                popup.open()
+                popup.close()
+            }
+        }
+
+        MyPopup {
+            id: popup
+
+
+
+        }
+
+//    //Popupz顺序只和自己相关，永远在其他控件前面
+//        Popup {
+//            id: rect
+//            z: 1
+//            width: 200
+//            height: 100
+//            visible: true
+//           background: Rectangle{
+//               color: "black"
+//           }
+//}
+//        //    Popup的z顺序例外
+//        Popup {
+//            id: rect2
+//            width: 200
+//            height: 100
+//            visible: true
+//            x: 100
+//            z: 2
+//            background: Rectangle{
+//                color: "blue"
+//            }
+//        }
+
+
+//    Rectangle {
+//        id: rect
+//        z: 1
+//        width: 200
+//        height: 100
+//        color: "black"
+//    }
+//    //    Popup的z顺序例外
+//    Popup {
+//        id: rect2
+//        width: 200
+//        height: 100
+//        visible: true
+//        x: 100
+//        z: -1
+
+//    }
+
+
+    //    //根据父控件的visible 属性决定子控件的显示和隐藏 popup是个例外
+
+    //    Rectangle {
+    //        width: 200
+    //        height: 100
+    //        color: "black"
+    //        visible: false
+    //        Popup {
+    //            visible: true
+    //            width: 50
+    //            height: 50
+    //        }
+    //    }
+
+    //    Rectangle {
+    //        width: 200
+    //        height: 100
+    //        color: "black"
+    //        visible: false
+    //        Rectangle {
+    //            visible: true
+    //            width: 50
+    //            height: 50
+    //            color: "red"
+    //        }
+    //    }
+
+
+    //    Button {
+    //        width: 50
+    //        height: 50
+    //        onClicked: {
+    //            popup.open()
+    ////            popup.close()
+    //        }
+    //    }
+
+    //    //popup两个坑
+    //    Popup {  //类似于Rectangle
+    //        id: popup
+    //        x: 100
+    //        y: 100
+    //        width: 200
+    //        height: 300
+    //        //         visible: true
+    //        Component.onCompleted: {
+    //            console.log(visible)
+    //        }
+    //    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////  P11   QML-Text的使用  /////////////////////////////////////////////////////////////////////////

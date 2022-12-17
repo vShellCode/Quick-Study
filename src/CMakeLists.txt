@@ -9,13 +9,13 @@ find_package(Qt6 6.2 COMPONENTS Quick REQUIRED)
 
 qt_add_executable(appQML_Study
     qml_study.qrc
-    main.cpp MyRectAngle.qml
+    main.cpp MyRectAngle.qml MyPopup.qml
 )
 
 qt_add_qml_module(appQML_Study
     URI QML_Study
     VERSION 1.0
-    QML_FILES main.qml MyRectAngle.qml
+    QML_FILES main.qml MyRectAngle.qml MyPopup.qml
 )
 
 
