@@ -21,4 +21,8 @@ P9	QML-CheckBox
 P10	QML-Button扩展  
 P11	QML-Text的使用  
 P12	QML-Popup的绘制与Overlay的使用  
+P13	QML-Repeater  
+P14	QML-ListView基础  
+P15	QML-ComboBox基础  
+P16	QML-ComboBox自定义绘制  
 ////////////////////////////////////////////////////////////////////////////////////////////////  
