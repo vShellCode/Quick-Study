@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls 2.5
 Window {
+    id: window
     width: 640
     height: 480
     visible: true
@@ -11,20 +12,222 @@ Window {
     maximumHeight: 600
     maximumWidth: 600
 
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////  P19	QML-自定义组件与信号槽的使用                //////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2023-05-22  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//    Component {
+//        id: com
+//        Button {
+//            id: btn
+//            background: Rectangle {
+//                anchors.fill:  parent
+//                border.color: btn.activeFocus ? "blue" : "black"
+//            }
+////            signal btnSig(int value)
+//            signal leftBtnPressed()
+//            Keys.onLeftPressed: {
+//                leftBtnPressed()
+//            }
+
+////            onClicked: {
+////                //console.log("vuale")
+////                btnSig(10)
+////            }
+//        }
+//    }
+
+//    MyComponent {
+//        com1: com
+//        com2: com
+//    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////  P18	QML-信号与槽基础                         //////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2023-05-17  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//    //方法一
+//    signal testSig(string s, int value)
+
+//    function func(ss,ii){
+//        console.log(ss,ii)
+//    }
+
+//    Button {
+//        width: 50
+//        height: 50
+//        onClicked: {
+//            testSig("zhangsan", "99")
+//        }
+//    }
+
+////    Component.onCompleted: {
+////        testSig.connect(func)
+////    }
+
+
+//    //方法二
+//    Connections {
+//        target: window
+//         //写法一
+////        onTestSig: {
+////            console.log(s,value)
+////        }
+//        //写法二
+//        function onTestSig(str,value){
+//            console.log(str,value)
+//        }
+//    }
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////  P17	QML-focus相关与FocousScope               //////////////////////////////////////////////////
+    ///////////////////////////////vShellCode: 2023-05-17  ///////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//    FocusScope {
+//        id: rect1
+//        width: 300
+//        height: 200
+//        focus: true
+//        Button {
+//            id: btn1
+//            focus: true
+//            width: 100
+//            height: 50
+//            background: Rectangle {
+//                anchors.fill:  parent
+//                border.color: btn1.activeFocus ? "blue" : "black"
+//            }
+////            text: qsTr("focus    " + txt1.focus + "  activeFocus   " + txt1.activeFocus)
+////            Component.onCompleted: {
+////                console.log("text1 complete")
+////            }
+//        }
+////        MouseArea {
+////            anchors.fill: parent
+////            onClicked: {
+////                   txt1.forceActiveFocus()
+////            }
+////        }
+//    }
+
+//    FocusScope {
+//        id: rect2
+//        width: 300
+//        height: 200
+//        y: 250
+//        Button {
+//            id: btn2
+//            width: 100
+//            height: 50
+//            focus: true
+//            focusPolicy: Qt.NoFocus
+//            background: Rectangle {
+//                anchors.fill:  parent
+//                border.color: btn2.activeFocus ? "blue" : "black"
+//            }
+//            onClicked: {
+//                btn2.forceActiveFocus()
+//            }
+
+////            text: qsTr("focus2    " + btn2.focus + "  activeFocus2   " + btn2.activeFocus)
+////            Component.onCompleted: {
+////                console.log("btn2 complete")
+////            }
+//        }
+//        MouseArea {
+//            anchors.fill: parent
+//            onClicked: {
+//                txt2.forceActiveFocus()
+//            }
+//        }
+//    }
+
+
+
+//    Rectangle {
+//        id: rect1
+//        width: 300
+//        height: 200
+//        Text {
+//            id: txt1
+//            focus: true
+//            text: qsTr("focus    " + txt1.focus + "  activeFocus   " + txt1.activeFocus)
+//            Component.onCompleted: {
+//                console.log("text1 complete")
+//            }
+//        }
+//    }
+
+//    Rectangle {
+//        id: rect2
+//        width: 300
+//        height: 200
+//        y: 250
+//        Text {
+//            id: txt2
+//            focus: true
+//            text: qsTr("focus2    " + txt2.focus + "  activeFocus2   " + txt2.activeFocus)
+//            Component.onCompleted: {
+//                console.log("text2 complete")
+//            }
+//        }
+//    }
+
+
+
+
+
+//    Button {
+//        id: btn
+//        width: 100
+//        height: 50
+//        focus: false
+////        focusPolicy: Qt.NoFocus
+//        background: Rectangle {
+//            anchors.fill:  parent
+//            border.color: btn.focus ? "blue" : "black"
+//        }
+//        onFocusChanged: {
+//            console.log("focus", focus)
+//        }
+//        onFocusReasonChanged: {
+//            console.log("focusReason", focusReason)
+//            console.log("Qt.MouseFocusReason", Qt.MouseFocusReason)
+//            console.log("Qt.TabFocusReason", Qt.TabFocusReason)
+//        }
+
+//        Component.onCompleted: {
+//            console.log("focusPolicy", focusPolicy)
+//            console.log("Qt.StrongFocus", Qt.StrongFocus)
+//        }
+//    }
+
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////  P16	QML-ComboBox自定义绘制                   //////////////////////////////////////////////////
     ///////////////////////////////vShellCode: 2023-05-17  ///////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    Rectangle {
-        width: 400
-        height: 300
-        border.color: "black"
-        MyComboBox{
-            bIsPopupShowDown: false
-            y: 200
-        }
-    }
+//    Rectangle {
+//        width: 400
+//        height: 300
+//        border.color: "black"
+//        MyComboBox{
+//            bIsPopupShowDown: false
+//            y: 200
+//        }
+//    }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////  P15	QML-ComboBox基础                         //////////////////////////////////////////////////
     ///////////////////////////////vShellCode: 2023-05-17  ///////////////////////////////////////////////////////////////////////

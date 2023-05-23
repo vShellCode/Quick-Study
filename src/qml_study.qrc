@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>xukun.jpeg</file>
         <file>xukun.gif</file>
+        <file>MyComponent.qml</file>
     </qresource>
 </RCC>

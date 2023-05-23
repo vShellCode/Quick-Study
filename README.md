@@ -25,4 +25,6 @@ P13	QML-Repeater
 P14	QML-ListView基础  
 P15	QML-ComboBox基础  
 P16	QML-ComboBox自定义绘制  
+P17	QML-focus相关与FocousScope  
+P18	QML-信号与槽基础  
 ////////////////////////////////////////////////////////////////////////////////////////////////  
