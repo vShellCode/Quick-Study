@@ -3,5 +3,6 @@
         <file>xukun.jpeg</file>
         <file>xukun.gif</file>
         <file>MyComponent.qml</file>
+        <file>MyRectAngle_p20.qml</file>
     </qresource>
 </RCC>
