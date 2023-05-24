@@ -9,7 +9,7 @@ find_package(Qt6 6.2 COMPONENTS Quick REQUIRED)
 
 qt_add_executable(appQML_Study
     qml_study.qrc
-    main.cpp MyRectAngle.qml MyPopup.qml MyListView.qml MyComboBox.qml MyComponent.qml MyRectAngleP20.qml
+    main.cpp MyQobject.h MyQobject.cpp MyRectAngle.qml MyPopup.qml MyListView.qml MyComboBox.qml MyComponent.qml MyRectAngleP20.qml
 )
 
 qt_add_qml_module(appQML_Study
@@ -17,6 +17,13 @@ qt_add_qml_module(appQML_Study
     VERSION 1.0
     QML_FILES main.qml MyRectAngle.qml MyPopup.qml MyListView.qml MyComboBox.qml MyComponent.qml MyRectAngleP20.qml
 )
+
+
+qt6_add_qml_module(myapp
+  URI com.mycompany.qmlcomponents
+  VERSION 1.0
+)
+
 
 
 set_target_properties(appQML_Study PROPERTIES
