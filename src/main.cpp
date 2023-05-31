@@ -44,5 +44,18 @@ int main(int argc, char *argv[])
 
     QObject::connect(MyQObject::getInstence(),SIGNAL(cppSig(QVariant,QVariant)),
                      window, SLOT(qmlSlot(QVariant,QVariant)));
+
+    //C++端调用QML函数方法
+    QVariant res;
+    QVariant arg_1 = 123;
+    QVariant arg_2 = "zhangsan";
+    QMetaObject::invokeMethod(window,"qmlFunc",
+                              Q_RETURN_ARG(QVariant,res),
+                              Q_ARG(QVariant,arg_1),
+                              Q_ARG(QVariant,arg_2));
+
+
+    qDebug() << "res: " << res;
+
     return app.exec();
 }
