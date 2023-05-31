@@ -31,3 +31,14 @@ void MyQObject::setSString(const QString &newSString)
     m_sString = newSString;
     emit sStringChanged();
 }
+
+void MyQObject::func()
+{
+    qDebug() <<__FUNCTION__;
+    emit cppSig(101,"wangwu");
+}
+
+void MyQObject::cppSlot(int i, QString s)
+{
+    qDebug()<< __FUNCTION__ << "  " << i << "   " << s;
+}
