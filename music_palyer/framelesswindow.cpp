@@ -79,7 +79,7 @@ void FramelessWindow::setWindowGeometry(const QPointF &pos)
     case BOTTOMLEFT: set_geometry_func(this->old_size - QSize(offset.x(), -offset.y()), this->old_pos - QPointF(offset.x(), 0));
 
         break;
-    case BOTTOM: set_geometry_func(this->old_size - QSize(0, -offset.y()), this->position());
+    case BOTTOM: set_geometry_func(this->old_size - QSize(0, offset.y()), this->position());
 
         break;
     case BOTTOMRIGHT: set_geometry_func(this->old_size - QSize(offset.x(), offset.y()), this->position());
@@ -156,6 +156,19 @@ FramelessWindow::MousePosition FramelessWindow::getMousePos(QPointF &pos)
         mouse_pos = BOTTOMRIGHT;
     }
     return mouse_pos;
+}
+
+FramelessWindow::MousePosition FramelessWindow::getMouse_pos() const
+{
+    return mouse_pos;
+}
+
+void FramelessWindow::setMouse_pos(MousePosition newMouse_pos)
+{
+    if (mouse_pos == newMouse_pos)
+        return;
+    mouse_pos = newMouse_pos;
+    emit mouse_posChanged();
 }
 
 

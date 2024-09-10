@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 6.2 COMPONENTS Quick REQUIRED)
 
+set(CMAKE_AUTORCC ON)
 qt_add_executable(appmusic_palyer
     main.cpp
 )
@@ -16,6 +17,7 @@ qt_add_qml_module(appmusic_palyer
     VERSION 1.0
     QML_FILES main.qml
     SOURCES framelesswindow.h framelesswindow.cpp
+    RESOURCES ImageResource.qrc
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

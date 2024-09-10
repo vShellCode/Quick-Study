@@ -5,13 +5,21 @@
 class FramelessWindow : public QQuickWindow
 {
     Q_OBJECT
+    Q_PROPERTY(MousePosition mouse_pos READ getMouse_pos WRITE setMouse_pos NOTIFY mouse_posChanged FINAL)
 
+
+public:
     enum MousePosition {
         TOPLEFT = 1,TOP,TOPRIGHT,LEFT,RIGHT,BOTTOMLEFT,BOTTOM,BOTTOMRIGHT,NORMAL
     };
-
-public:
+    Q_ENUM(MousePosition);
     FramelessWindow(QWindow* parrent = nullptr);
+
+    MousePosition getMouse_pos() const;
+    void setMouse_pos(MousePosition newMouse_pos);
+
+signals:
+    void mouse_posChanged();
 
 protected:
     void mousePressEvent(QMouseEvent* event);
@@ -32,6 +40,7 @@ private:
     QPointF old_pos;
     // 旧大小
     QSize old_size;
+
 
 
 
